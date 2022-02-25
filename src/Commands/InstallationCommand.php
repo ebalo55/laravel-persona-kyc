@@ -43,10 +43,18 @@ class InstallationCommand extends Command
         // finally write the file to the enum folder
         file_put_contents($persona_final_template_path . "/PersonaTemplates.php", $content);
         $this->info("PersonaTemplates compiled successfully!");
+
         $this->info("Publishing configuration file");
-        $this->call("vendor:publish --provider=\"Doinc\\PersonaKyc\\PersonaServiceProvider\"");
+        $this->call("vendor:publish", [
+            "tag" => "persona-kyc-config"
+        ]);
+        $this->info("Publishing migrations");
+        $this->call("vendor:publish", [
+            "tag" => "persona-kyc-migrations"
+        ]);
 
         $this->info("Installation completed!");
+        $this->info("You can now run `php artisan migrate` to create the just installed tables.");
         return self::SUCCESS;
     }
 

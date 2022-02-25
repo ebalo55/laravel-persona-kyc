@@ -79,7 +79,7 @@ class PersonaFile extends PersonaBaseAccessor
             $full_url
         );
 
-        if(
+        if (
             $regex->hasMatch() &&
             Str::startsWith($regex->group(0), "https://withpersona.com/api/v1/files/") &&
             count($regex->groups()) === 3

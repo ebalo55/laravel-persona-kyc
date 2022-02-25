@@ -126,7 +126,7 @@ class PersonaInquiries extends PersonaBaseAccessor
      * @return mixed
      * @throws InvalidModelData|PersonaRecordNotFound
      */
-    public function redact(string $identifier): mixed
+    public function redact(string $identifier): Inquiry
     {
         return $this->internalRedact(
             Inquiry::class,

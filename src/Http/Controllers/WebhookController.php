@@ -175,6 +175,9 @@ class WebhookController extends BaseController
                         case EventTypes::INQUIRY_DECLINED:
                             InquiryDeclined::dispatch($event->payload());
                             break;
+                        case EventTypes::INQUIRY_TRANSITIONED:
+                            InquiryTransitioned::dispatch($event->payload());
+                            break;
 
                         case EventTypes::INQUIRY_SESSION_STARTED:
                             InquirySessionStarted::dispatch($event->payload());
@@ -255,8 +258,6 @@ class WebhookController extends BaseController
                         case EventTypes::ACCOUNT_PROPERTY_REDACTED:
                             AccountPropertyRedacted::dispatch($event->payload());
                             break;
-                        case EventTypes::INQUIRY_TRANSITIONED:
-                            InquiryTransitioned::dispatch($event->payload());
                     }
                 }
             }

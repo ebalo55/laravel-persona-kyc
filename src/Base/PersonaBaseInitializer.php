@@ -8,12 +8,12 @@ trait PersonaBaseInitializer
 
     /**
      * Get or initialize a PersonaAccounts instance
-     * @return self
+     * @return static
      */
-    public static function init(): self
+    public static function init(): static
     {
         if (is_null(self::$instance)) {
-            self::$instance = new self();
+            static::$instance = new static();
         }
         return self::$instance;
     }
