@@ -1,7 +1,7 @@
 # Laravel Persona KYC
 
 [![Latest Stable Version](http://poser.pugx.org/do-inc/laravel-persona-kyc/v)](https://packagist.org/packages/do-inc/laravel-persona-kyc)
-[![Tests](https://github.com/Do-inc/laravel-persona-kyc/actions/workflows/php.yml/badge.svg?branch=master)](https://github.com/Do-inc/laravel-persona-kyc/actions/workflows/php.yml)
+[![tests](https://github.com/Do-inc/laravel-persona-kyc/actions/workflows/php.yml/badge.svg?branch=master)](https://github.com/Do-inc/laravel-persona-kyc/actions/workflows/php.yml)
 [![Total Downloads](http://poser.pugx.org/do-inc/laravel-persona-kyc/downloads)](https://packagist.org/packages/do-inc/laravel-persona-kyc)
 [![License](http://poser.pugx.org/do-inc/laravel-persona-kyc/license)](https://packagist.org/packages/do-inc/laravel-persona-kyc)
 [![PHP Version Require](http://poser.pugx.org/do-inc/laravel-persona-kyc/require/php)](https://packagist.org/packages/do-inc/laravel-persona-kyc)
