@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Enums;
+
+use Doinc\PersonaKyc\Enums\IPersonaTemplates;
+
+enum PersonaTemplates: string implements IPersonaTemplates {
+    public function val(): string
+    {
+        return $this->value;
+    }
+
+}
