@@ -32,5 +32,11 @@ jobs:
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
+    - name: Copy .env
+      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+    - name: Setup .env variables
+      run: |
+        sed -i -e 's/persona_sandbox_XXX/${{secrets.PERSONA_API_KEY}}/' .env
+        sed -i -e 's/ey\.\.\.--a14\.\.\./${{secrets.PERSONA_ORGANIZATION_TEST_ID}}/' .env
     - name: Run test suite
       run: composer run-script test
