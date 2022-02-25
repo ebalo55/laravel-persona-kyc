@@ -1,7 +1,6 @@
 {
     "name": "do-inc/laravel-persona-kyc",
     "description": "KYC (Know Your Customer) performed using the Persona (https://withpersona.com) API",
-    "version": "v0.10.19",
     "keywords": [
         "do-inc",
         "laravel",
