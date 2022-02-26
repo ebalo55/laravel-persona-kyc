@@ -46,11 +46,11 @@ class InstallationCommand extends Command
 
         $this->info("Publishing configuration file");
         $this->call("vendor:publish", [
-            "tag" => "persona-kyc-config"
+            "--tag" => "persona-kyc-config"
         ]);
         $this->info("Publishing migrations");
         $this->call("vendor:publish", [
-            "tag" => "persona-kyc-migrations"
+            "--tag" => "persona-kyc-migrations"
         ]);
 
         $this->info("Installation completed!");
