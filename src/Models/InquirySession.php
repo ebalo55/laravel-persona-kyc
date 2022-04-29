@@ -55,7 +55,7 @@ class InquirySession implements IPersonaModel
         $this->is_proxy = (bool)Arr::get($arr, "data.attributes.is_proxy");
         $this->is_tor = (bool)Arr::get($arr, "data.attributes.is_tor");
         $this->is_datacenter = (bool)Arr::get($arr, "data.attributes.is_datacenter");
-        $this->threat_level = Arr::get($arr, "data.attributes.threat_level");
+        $this->threat_level = !is_null(Arr::get($arr, "data.attributes.threat_level")) ? ThreatLevels::from(Arr::get($arr, "data.attributes.threat_level")) : null;
         $this->country_code = Arr::get($arr, "data.attributes.country_code");
         $this->country_name = Arr::get($arr, "data.attributes.country_name");
         $this->region_code = Arr::get($arr, "data.attributes.region_code");

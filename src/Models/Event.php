@@ -78,6 +78,7 @@ class Event implements IPersonaModel
             EventTypes::INQUIRY_MARKED_FOR_REVIEW->value => Inquiry::class,
             EventTypes::INQUIRY_APPROVED->value => Inquiry::class,
             EventTypes::INQUIRY_DECLINED->value => Inquiry::class,
+            EventTypes::INQUIRY_TRANSITIONED->value => Inquiry::class,
 
             EventTypes::INQUIRY_SESSION_STARTED->value => InquirySession::class,
             EventTypes::INQUIRY_SESSION_EXPIRED->value => InquirySession::class,
@@ -134,7 +135,7 @@ class Event implements IPersonaModel
      */
     public function signature(): string {
         return sodium_bin2hex(sodium_crypto_generichash(
-            Event::class . "|{$this->created_at}|{$this->event_type}|" . json_encode($this->payload),
+            Event::class . "|{$this->created_at}|{$this->event_type->value}|" . json_encode($this->payload),
             length: SODIUM_CRYPTO_GENERICHASH_BYTES_MAX
         ));
     }

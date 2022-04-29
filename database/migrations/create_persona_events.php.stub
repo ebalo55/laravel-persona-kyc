@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('persona_events', function (Blueprint $table) {
             $table->id();
-            $table->string('signature', 64)->unique();
+            $table->string('signature', 128)->unique();
             $table->unsignedBigInteger('generation_timestamp');
             $table->timestamps();
         });
